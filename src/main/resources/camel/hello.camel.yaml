@@ -1,0 +1,14 @@
+- route:
+    id: route-2544
+    from:
+      id: from-9992
+      uri: timer
+      parameters:
+        delay: "1000"
+        fixedRate: true
+        timerName: my-timer
+      steps:
+        - setBody:
+            simple:
+              expression: Hello World from Camel - ${routeId}
+        - log: ${body}
