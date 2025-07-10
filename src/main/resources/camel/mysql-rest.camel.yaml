@@ -15,6 +15,21 @@
             uri: sql
             parameters:
               query: select * from t_student where id=:#${header.id}
-        - marshal:
-            id: marshal-8387
-            json: {}
+        - choice:
+            otherwise:
+              steps:
+                - marshal:
+                    id: marshal-8387
+                    json: {}
+            when:
+              - steps:
+                  - setHeader:
+                      id: setHeader-3175
+                      name: CamelHttpResponseCode
+                      simple:
+                        id: response-code
+                        expression: "404"
+                  - setBody:
+                      header:
+                        expression: a
+                simple: ${body.isEmpty()}
