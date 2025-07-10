@@ -1,0 +1,21 @@
+- route:
+    id: route-rest-to-mysql
+    from:
+      id: from-2514
+      uri: rest
+      parameters:
+        method: get
+        path: /student/{id}
+      steps:
+        - log:
+            id: log-2466
+            message: getting student id - ${header.id}
+        - to:
+            id: to-2548
+            uri: sql
+            parameters:
+              query: select * from t_student where id=:#${header.id}
+        - marshal:
+            id: marshal-8387
+            json:
+              library: Jackson
