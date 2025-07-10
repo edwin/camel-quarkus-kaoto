@@ -17,5 +17,4 @@
               query: select * from t_student where id=:#${header.id}
         - marshal:
             id: marshal-8387
-            json:
-              library: Jackson
+            json: {}
