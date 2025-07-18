@@ -18,6 +18,8 @@
         <quarkus.platform.version>3.20.1.SP1-redhat-00001</quarkus.platform.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.5.2</surefire-plugin.version>
+
+        <hawtio.version>4.2.0.redhat-00034</hawtio.version>
     </properties>
 
     <repositories>
@@ -59,6 +61,13 @@
                 <groupId>${quarkus.platform.group-id}</groupId>
                 <artifactId>quarkus-camel-bom</artifactId>
                 <version>${quarkus.platform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.hawt</groupId>
+                <artifactId>hawtio-bom</artifactId>
+                <version>${hawtio.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -108,6 +117,12 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-jdbc-mysql</artifactId>
+        </dependency>
+
+        <!-- hawtio -->
+        <dependency>
+            <groupId>io.hawt</groupId>
+            <artifactId>hawtio-quarkus</artifactId>
         </dependency>
 
         <dependency>

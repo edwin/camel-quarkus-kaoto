@@ -59,3 +59,9 @@ __  ____  __  _____   ___  __ ____  ______
 2025-07-04 09:42:08,114 INFO  [route-2544] (Camel (camel-1) thread #1 - timer://my-timer) Hello World from Camel - route-2544
 
 ```
+
+## Monitoring
+We are using `Hawtio` as a monitoring dashboard and it can be accesses through this url
+```
+http://localhost:8080/hawtio
+```
